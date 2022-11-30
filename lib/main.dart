@@ -97,7 +97,76 @@ class PlayPage extends StatefulWidget {
   _PlayPageState createState() => _PlayPageState();
 }
 
+class _PlayPageState extends State<PlayPage> {
+  String selectedAnswer;
+  int score = 0;
+  int i = 1;
 
+  @override
+  Widget build(BuildContext context) {
+    
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Quiz App"),
+      ),
+      body: Column(
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.all(20),
+            child: Text(
+              widget.question,
+              style: TextStyle(fontSize: 17),
+            ),
+          ),
+          Column(
+            children: options
+                .map((option) => RadioListTile(
+                      title: Text(option),
+                      groupValue: selectedAnswer,
+                      value: option,
+                      onChanged: (val) {
+                        selectedAnswer = val;
+                        setState(() {});
+                      },
+                    ))
+                .toList(),
+          ),
+          Container(
+            margin: EdgeInsets.all(20),
+            child: RaisedButton(
+              onPressed: () {
+                if (selectedAnswer == widget.correctAnswer) {
+                  score = score + 1;
+                }
+                if (i < 10) {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => PlayPage(
+                                question: widget.question,
+                                correctAnswer: widget.correctAnswer,
+                                incorrectAnswers: widget.incorrectAnswers,
+                              )));
+                } else {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ScorePage(
+                                score: score,
+                              )));
+                }
+              },
+              child: Text("Submit"),
+              color: Colors.blue,
+              textColor: Colors.white,
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
 
 
 
