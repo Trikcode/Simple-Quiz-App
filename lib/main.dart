@@ -83,6 +83,20 @@ class _HomePageState extends State<HomePage> {
 }
 
 
+class PlayPage extends StatefulWidget {
+  final String question;
+  final String correctAnswer;
+  final List<String> incorrectAnswers;
+
+  PlayPage(
+      {@required this.question,
+      @required this.correctAnswer,
+      @required this.incorrectAnswers});
+
+  @override
+  _PlayPageState createState() => _PlayPageState();
+}
+
 
 
 
