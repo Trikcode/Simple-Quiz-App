@@ -104,7 +104,9 @@ class _PlayPageState extends State<PlayPage> {
 
   @override
   Widget build(BuildContext context) {
-    
+    List<String> options = widget.incorrectAnswers;
+    options.add(widget.correctAnswer);
+    options.shuffle();
 
     return Scaffold(
       appBar: AppBar(
