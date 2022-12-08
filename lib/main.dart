@@ -170,5 +170,35 @@ class _PlayPageState extends State<PlayPage> {
   }
 }
 
+class ScorePage extends StatelessWidget {
+  final int score;
+
+  ScorePage({@required this.score});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Quiz App"),
+      ),
+      body: Center(
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.blue,
+            borderRadius: BorderRadius.circular(20),
+          ),
+          padding: EdgeInsets.all(20),
+          child: Text(
+            "Your Score is $score",
+            style: TextStyle(fontSize: 20, color: Colors.white),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
 
 
