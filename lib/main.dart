@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:quizapp/quiz.dart';
+import 'package:quizapp/retake.dart';
 import 'dart:math';
 
 void main() => runApp(MyApp());
@@ -193,6 +194,21 @@ class ScorePage extends StatelessWidget {
             style: TextStyle(fontSize: 20, color: Colors.white),
           ),
         ),
+      ),
+    );
+  }
+}
+
+
+class RetakePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Retake"),
+      ),
+      body: Center(
+        child: Text("Retake"),
       ),
     );
   }
