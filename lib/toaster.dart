@@ -20,7 +20,7 @@ class _ToastDisplayState extends State<ToastDisplay> {
 										child: Text('Show Toast'),  
 										onPressed: () {  
 												Fluttertoast.showToast(  
-																msg: "This is Toast messsage",  
+																msg: "You can attempt quiz now",  
 																toastLength: Toast.LENGTH_SHORT,  
 																gravity: ToastGravity.BOTTOM,  
 																timeInSecForIosWeb: 1,  
